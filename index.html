@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Immigration Flow Tool</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    .hidden { display: none; }
+    button, a.button-link {
+      display: inline-block;
+      padding: 10px 15px;
+      margin: 8px 4px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    a.button-link:hover, button:hover { background-color: #0056b3; }
+
+    #bottomButtons {
+      text-align: center;
+      margin-top: 40px;
+    }
+    #bottomButtons button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    #restartBtn { background-color: #6c757d; }
+    #backBtn { background-color: #17a2b8; }
+    #hearBtn { background-color: #28a745; }
+  </style>
+</head>
+<body>
+
+  <label for="languageToggle"></label>
+  <select id="languageToggle" onchange="renderStep(currentStep)">
+    <option value="en">English</option>
+    <option value="es" selected>Español</option>
+  </select>
+
+  <div id="questionBox">
+    <p id="questionText"></p>
+    <button id="yesBtn" type="button">Sí</button>
+    <button id="noBtn" type="button">No</button>
+    <button id="notSureBtn" type="button">No estoy seguro</button>
+  </div>
+
+  <div id="outcomeBox" class="hidden">
+    <p id="outcomeText"></p>
+    <a id="outcomeLink" href="#" target="_blank" class="button-link hidden">Buscar su información</a>
+    <button id="nextBtn" class="hidden" type="button" onclick="goToNext()">Siguiente</button>
+  </div>
+
+  <div id="hearingDateBox" class="hidden">
+    <h2 id="hearingPrompt"></h2>
+    <label for="hearingDate"></label>
+    <input type="date" id="hearingDate" />
+    <button type="button" onclick="calculateDeadline()">Calcular</button>
+    <div id="hearingResult"></div>
+  </div>
+
+  <div id="bottomButtons">
+    <button id="backBtn" type="button" onclick="goBack()">Atrás</button>
+    <button id="hearBtn" type="button" onclick="speakText()">Escuchar</button>
+    <button id="restartBtn" type="button" onclick="restart()">Empezar de nuevo</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

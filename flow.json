@@ -1,0 +1,57 @@
+{
+  "start": {
+    "question": "Are you currently in removal proceedings?",
+    "question_es": "¿Está usted actualmente en proceso de deportación?",
+    "yes": "y_proceedings",
+    "no": "n_proceedings",
+    "not sure": "ns_proceedings"
+  },
+  "y_proceedings": {
+    "outcome": "You can look up your court info here using your A#:",
+    "outcome_es": "Puede buscar su información de la corte aquí usando su número A:",
+    "link": "https://acis.eoir.justice.gov/en/",
+    "next": "hearing_date_input"
+  },
+  "hearing_date_input": {
+    "special": "hearing_date"
+  },
+  "n_proceedings": {
+    "outcome": "You might not be in proceedings. If you're unsure, check your immigration status with a legal service provider.",
+    "outcome_es": "Es posible que no esté en proceso. Si no está seguro, consulte su estatus migratorio con un proveedor de servicios legales."
+  },
+  "ns_proceedings": {
+    "question": "Were you apprehended at the border?",
+    "question_es": "¿Fue detenido en la frontera?",
+    "yes": "border_asylum",
+    "no": "interior_arrest",
+    "not sure": "border_asylum"
+  },
+  "border_asylum": {
+    "question": "Did you claim asylum?",
+    "question_es": "¿Pidió asilo?",
+    "yes": "outcome_asylum",
+    "no": "outcome_expedited"
+  },
+  "interior_arrest": {
+    "question": "Were you arrested by ICE inside the U.S.?",
+    "question_es": "¿Fue arrestado por ICE dentro de los EE.UU.?",
+    "yes": "outcome_nta",
+    "no": "outcome_watchlist"
+  },
+  "outcome_asylum": {
+    "outcome": "➡ You may be eligible for asylum in court.",
+    "outcome_es": "➡ Puede que sea elegible para asilo en la corte."
+  },
+  "outcome_expedited": {
+    "outcome": "➡ You may face expedited removal.",
+    "outcome_es": "➡ Puede enfrentar una deportación expedita."
+  },
+  "outcome_nta": {
+    "outcome": "➡ You’ll likely receive a Notice to Appear (NTA).",
+    "outcome_es": "➡ Probablemente recibirá una Notificación de Comparecencia (NTA)."
+  },
+  "outcome_watchlist": {
+    "outcome": "➡ You may not be in proceedings yet. Stay alert.",
+    "outcome_es": "➡ Puede que aún no esté en proceso. Manténgase atento."
+  }
+}
