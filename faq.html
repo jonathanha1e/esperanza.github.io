@@ -4,38 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preguntas Frecuentes (FAQ)</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #333;
-    }
-    a {
-      color: #007BFF;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .back-link, .button-link {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 10px 15px;
-      background-color: #6c757d;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    #languageToggle {
-      margin-bottom: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -54,7 +23,7 @@
   <h2 id="q2">¿Quién hizo esta herramienta?</h2>
   <p id="a2">
     Este proyecto es de código abierto. Puedes ver el código y contribuir en GitHub:
-    <a id="ghLink" href="https://github.com/jonathanha1e/immigrationflow" target="_blank">Ver en GitHub</a>
+    <a id="ghLink" href="https://github.com/jonathanha1e/esperanza.github.io" target="_blank">Ver en GitHub</a>
   </p>
 
   <h2 id="q3">¿Mis respuestas se guardan?</h2>
@@ -70,7 +39,8 @@
     </a>
   </p>
 
-  <a class="back-link" href="index.html" id="backBtn">⬅ Volver a la herramienta</a>
+  <button id="faqBackBtn" onclick="window.location.href='index.html'">⬅ Volver a la herramienta</button>
+  <button id="faqListenBtn" onclick="speakFAQ()">Escuchar</button>
 
   <script>
     function translateFAQ() {
@@ -104,6 +74,30 @@
         document.getElementById("backBtn").innerText = "⬅ Volver a la herramienta";
       }
     }
+    function speakFAQ() {
+        const lang = document.getElementById("languageToggle").value;
+        const blocks = [
+            document.getElementById("q1").innerText,
+            document.getElementById("a1").innerText,
+            document.getElementById("q2").innerText,
+            document.getElementById("a2").innerText,
+            document.getElementById("q3").innerText,
+            document.getElementById("a3").innerText,
+            document.getElementById("q4").innerText,
+            document.getElementById("a4").innerText
+  ];
+  const text = blocks.join(". ");
+
+  if ('speechSynthesis' in window) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang === "es" ? "es-ES" : "en-US";
+    speechSynthesis.speak(utterance);
+  } else {
+    alert(lang === "es"
+      ? "Tu navegador no soporta texto a voz."
+      : "Your browser doesn't support text-to-speech.");
+  }
+}
   </script>
 
 </body>

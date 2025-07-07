@@ -1,0 +1,82 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Shared button styles */
+button, a.button-link {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 8px 4px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover, a.button-link:hover {
+  background-color: #0056b3;
+}
+
+/* Green "Escuchar" button */
+#hearBtn, #introHearBtn, #faqListenBtn {
+  background-color: #28a745;
+}
+
+#hearBtn:hover, #introHearBtn:hover, #faqListenBtn:hover {
+  background-color: #1e7e34;
+}
+
+/* Grey "Volver" button on FAQ page */
+#faqBackBtn {
+  background-color: #6c757d;
+}
+
+#faqBackBtn:hover {
+  background-color: #5a6268;
+}
+
+/* Gray "Volver"/Restart button */
+#backBtn, #restartBtn {
+  background-color: #6c757d;
+}
+
+#backBtn:hover, #restartBtn:hover {
+  background-color: #5a6268;
+}
+
+/* Info button (optional use for FAQ, next, etc.) */
+#nextBtn {
+  background-color: #007BFF;
+}
+
+#nextBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Language dropdown spacing */
+#languageToggle {
+  margin-bottom: 30px;
+}
+
+.hidden {
+  display: none;
+}

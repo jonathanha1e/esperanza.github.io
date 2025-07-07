@@ -23,8 +23,7 @@
     "question": "Were you apprehended at the border?",
     "question_es": "¿Fue detenido en la frontera?",
     "yes": "border_asylum",
-    "no": "interior_arrest",
-    "not sure": "border_asylum"
+    "no": "interior_arrest"
   },
   "border_asylum": {
     "question": "Did you claim asylum?",
@@ -42,13 +41,22 @@
     "outcome": "➡ You may be eligible for asylum in court.",
     "outcome_es": "➡ Puede que sea elegible para asilo en la corte."
   },
+
   "outcome_expedited": {
     "outcome": "➡ You may face expedited removal.",
-    "outcome_es": "➡ Puede enfrentar una deportación expedita."
-  },
+    "outcome_es": "➡ Puede enfrentar una deportación expedita.",
+      "action": {
+        "label_en": "Apply for Asylum",
+        "label_es": "Solicitar asilo",
+        "link": "https://www.uscis.gov/humanitarian/refugees-and-asylum/asylum"
+  }
+},
+
   "outcome_nta": {
     "outcome": "➡ You’ll likely receive a Notice to Appear (NTA).",
-    "outcome_es": "➡ Probablemente recibirá una Notificación de Comparecencia (NTA)."
+    "outcome_es": "➡ Probablemente recibirá una Notificación de Comparecencia (NTA).",
+    "link": "https://acis.eoir.justice.gov/en/",
+    "next": "hearing_date_input"
   },
   "outcome_watchlist": {
     "outcome": "➡ You may not be in proceedings yet. Stay alert.",
