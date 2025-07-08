@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("hearingDateBox").classList.add("hidden");
   document.getElementById("bottomButtons").classList.add("hidden");
 
-  fetch('flow.json')
+  fetch('/flow')
     .then(res => res.json())
     .then(data => {
       flowData = data;
