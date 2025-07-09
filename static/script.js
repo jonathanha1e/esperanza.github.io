@@ -128,15 +128,15 @@ function calculateDeadline() {
   const resultBox = document.getElementById('hearingResult');
   resultBox.innerHTML = "";
 
-  if (!input) {
-    resultBox.innerText = "Por favor ingrese una fecha.";
-    return;
-  }
-
   const today = new Date();
   const hearingDate = new Date(input);
   const resultText = document.createElement("p");
   const actionBtn = document.createElement("button");
+
+  if (!hearingDate) {
+    resultContainer.innerText = "No se ingresó una fecha de audiencia.";
+}
+
 
   if (hearingDate < today) {
     resultText.innerText = "⚠️ Su fecha de corte ya pasó. ¿Desea presentar una moción para reabrir?";
@@ -148,10 +148,13 @@ function calculateDeadline() {
       resultText.innerText = "⏳ Su audiencia es pronto, y ha perdido el plazo para presentarse por video.";
       actionBtn.innerText = "Recursos para representar a sí mismo";
       actionBtn.onclick = () => window.open("https://www.justice.gov/eoir/self-help-resources", "_blank");
-    } else {
+    } else if (hearingDate > 0){
       resultText.innerText = "✅ Su audiencia se acerca, y aún tiene tiempo para pedir presentarse por video.";
       actionBtn.innerText = "Moción para presentarse por video";
       actionBtn.onclick = () => window.open("https://www.justice.gov/eoir/appear-telephonically-or-via-video", "_blank");
+    } else {resultText.innerText = "Por favor ingrese una fecha."
+        actionBtn.style.display = "none"; // 🔥 HIDE the button
+
     }
   }
 

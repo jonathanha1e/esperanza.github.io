@@ -3,9 +3,13 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+@app.route("/")
+def home():
+    return render_template("index.html", title="Immigration Tool")
+
+@app.route("/next")
+def next_page():
+    return render_template("next.html", title="")
 
 @app.route('/faq')
 def faq():
@@ -20,5 +24,4 @@ def flow():
 import os
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(debug=True, port=5001)
