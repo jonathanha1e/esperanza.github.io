@@ -150,11 +150,10 @@ function calculateDeadline() {
       actionBtn.onclick = () => window.open("https://www.justice.gov/eoir/self-help-resources", "_blank");
     } else if (hearingDate > 0){
       resultText.innerText = "✅ Su audiencia se acerca, y aún tiene tiempo para pedir presentarse por video.";
-      actionBtn.innerText = "Moción para presentarse por video";
-      actionBtn.onclick = () => window.open("https://www.justice.gov/eoir/appear-telephonically-or-via-video", "_blank");
+      actionBtn.innerText = "Cambiar su audiencia a formato por video";
+      actionBtn.onclick = () => window.open("https://esperanza.github.io/audiencia-video.html", "_blank", "_blank");
     } else {resultText.innerText = "Por favor ingrese una fecha."
         actionBtn.style.display = "none"; // 🔥 HIDE the button
-
     }
   }
 
