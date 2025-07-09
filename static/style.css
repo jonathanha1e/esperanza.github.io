@@ -142,6 +142,7 @@ button:hover, button-link:hover {
 
 input[type="date"] {
   width: 100%;
+  max-width: 100%;
   padding: 12px;
   font-size: 24px;
   margin: 12px 0;
