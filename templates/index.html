@@ -1,59 +1,49 @@
+<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Immigration Flow Tool</title>
+  <title> id="mainTitle">Herramienta de Inmigración<</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 <body>
+  <div class="container">
+    <h1>Herramienta de Inmigración</h1>
 
-  <label for="languageToggle"></label>
-  <select id="languageToggle" onchange="translateUI()">
-    <option value="en">English</option>
-    <option value="es" selected>Español</option>
-  </select>
-
-  <div id="introBox">
-    <h1>Herramienta de Información Migratoria</h1>
-    <p>
-      Esta herramienta le ayudará a entender su situación migratoria en los Estados Unidos y le dará información sobre posibles próximos pasos.
-      No es asesoría legal, pero puede ayudarle a prepararse.
-    </p>
-    <div style="text-align: center; margin-top: 30px;">
-      <a href="faq.html" class="button-link">Preguntas frecuentes</a>
-      <button onclick="startFlow()">Continuar</button>
-      <button id="introHearBtn" type="button" onclick="speakText()">Escuchar</button>
+    <div id="introBox">
+      <h2>Bienvenido</h2>
+      <p>Esta herramienta le ayudará a entender su situación migratoria en EE.UU.</p>
+      <button id="startBtn">🚀 Empezar</button>
     </div>
-  </div>
 
-  <div id="questionBox" class="hidden">
-    <p id="questionText"></p>
-    <button id="yesBtn" type="button">Sí</button>
-    <button id="noBtn" type="button">No</button>
-    <button id="notSureBtn" type="button">No estoy seguro</button>
-  </div>
+    <a id="faqBtn" href="/faq" class="button-link">❓ Preguntas Frecuentes</a>
 
-  <div id="outcomeBox" class="hidden">
-    <p id="outcomeText"></p>
-    <a id="outcomeLink" href="#" target="_blank" class="button-link hidden">Buscar su información</a>
-    <button id="customActionBtn" class="hidden" type="button">Acción</button>
-    <button id="nextBtn" class="hidden" type="button" onclick="goToNext()">Siguiente</button>
-  </div>
+    <div id="questionBox" class="hidden">
+      <h2 id="questionText"></h2>
+      <button id="yesBtn">✅ Sí</button>
+      <button id="noBtn">❌ No</button>
+      <button id="notSureBtn">🤔 No estoy seguro</button>
+    </div>
 
-  <div id="hearingDateBox" class="hidden">
-    <h2 id="hearingPrompt"></h2>
-    <label for="hearingDate"></label>
-    <input type="date" id="hearingDate" />
-    <button type="button" onclick="calculateDeadline()">Calcular</button>
-    <div id="hearingResult"></div>
-  </div>
+    <div id="outcomeBox" class="hidden">
+      <p id="outcomeText"></p>
+      <a id="outcomeLink" href="#" target="_blank" class="button-link hidden">🔗 Buscar su información</a>
+      <button id="nextBtn" class="hidden">➡️ Siguiente</button>
+    </div>
 
-  <div id="bottomButtons" class="hidden">
-    <button id="backBtn" type="button" onclick="goBack()">Atrás</button>
-    <button id="hearBtn" type="button" onclick="speakText()">Escuchar</button>
-    <button id="restartBtn" type="button" onclick="restart()">Empezar de nuevo</button>
+    <div id="hearingDateBox" class="hidden">
+      <h2 id="hearingPrompt"></h2>
+      <input type="date" id="hearingDate">
+      <button id="calculateBtn">🗓️ Calcular</button>
+      <div id="hearingResult"></div>
+    </div>
+
+    <div class="nav-buttons hidden" id="navButtons">
+      <button id="backBtn">🔙 Atrás</button>
+      <button id="hearBtn">🔊 Escuchar</button>
+      <button id="restartBtn">🔁 Empezar de nuevo</button>
+    </div>
   </div>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>

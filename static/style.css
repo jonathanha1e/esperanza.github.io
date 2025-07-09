@@ -1,81 +1,152 @@
+/* Headings */
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+p {
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* static/style.css */
 body {
-  font-family: sans-serif;
-  padding: 20px;
+  font-family: system-ui, sans-serif;
+  background-color: #f1f3f5;
+  color: #212529;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
   max-width: 600px;
-  margin: auto;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-h1, h2 {
-  color: #333;
+h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
 }
 
-a {
-  color: #007BFF;
-  text-decoration: none;
-}
-e@PZMaLJLodXa7Z
-
-a:hover {
-  text-decoration: underline;
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
 }
 
-/* Shared button styles */
-button, a.button-link {
-  display: inline-block;
-  padding: 10px 15px;
-  margin: 8px 4px;
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+button, .button-link {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 14px;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
   background-color: #007BFF;
   color: white;
-  border: none;
-  border-radius: 5px;
+  text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  text-decoration: none;
+  margin: 10px 0;
   cursor: pointer;
 }
 
-button:hover, a.button-link:hover {
+button:hover, button-link:hover {
   background-color: #0056b3;
+  cursor: pointer;
 }
 
-/* Green "Escuchar" button */
-#hearBtn, #introHearBtn, #faqListenBtn {
+/* Color-coded buttons */
+#yesBtn {
   background-color: #28a745;
+  color: white;
+}
+#yesBtn:hover {
+  background-color: #218838;
 }
 
-#hearBtn:hover, #introHearBtn:hover, #faqListenBtn:hover {
-  background-color: #1e7e34;
+#noBtn {
+  background-color: #dc3545;
+  color: white;
+}
+#noBtn:hover {
+  background-color: #c82333;
 }
 
-/* Grey "Volver" button on FAQ page */
-#faqBackBtn {
+#notSureBtn {
   background-color: #6c757d;
+  color: white;
 }
-
-#faqBackBtn:hover {
+#notSureBtn:hover {
   background-color: #5a6268;
 }
 
-/* Gray "Volver"/Restart button */
-#backBtn, #restartBtn {
-  background-color: #6c757d;
+#restartBtn {
+  background-color: #343a40;
+  color: white;
+}
+#restartBtn:hover {
+  background-color: #23272b;
 }
 
-#backBtn:hover, #restartBtn:hover {
-  background-color: #5a6268;
+#backBtn {
+  background-color: #17a2b8;
+  color: white;
+}
+#backBtn:hover {
+  background-color: #138496;
 }
 
-/* Info button (optional use for FAQ, next, etc.) */
-#nextBtn {
+#hearBtn {
+  background-color: #ffc107;
+  color: #212529;
+}
+#hearBtn:hover {
+  background-color: #e0a800;
+}
+
+#nextBtn, .button-link {
   background-color: #007BFF;
+  color: white;
 }
-
-#nextBtn:hover {
+#nextBtn:hover, .button-link:hover {
   background-color: #0056b3;
 }
 
-/* Language dropdown spacing */
-#languageToggle {
-  margin-bottom: 30px;
+.nav-buttons {
+  margin-top: 30px;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 24px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 .hidden {

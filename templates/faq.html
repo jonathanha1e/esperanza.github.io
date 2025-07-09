@@ -1,104 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preguntas Frecuentes (FAQ)</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Preguntas Frecuentes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+  <div class="container">
+    <h1>❓ Preguntas Frecuentes</h1>
 
-  <select id="languageToggle" onchange="translateFAQ()">
-    <option value="es" selected>Español</option>
-    <option value="en">English</option>
-  </select>
+    <h2>¿Qué es esta herramienta?</h2>
+    <p>Es una guía sencilla para ayudarle a entender su estatus migratorio en EE.UU. No es asesoría legal, pero puede ayudarle a saber sus próximos pasos.</p>
 
-  <h1 id="faqTitle">Preguntas Frecuentes (FAQ)</h1>
+    <h2>¿Quién hizo esta herramienta?</h2>
+    <p>Este proyecto es de código abierto. Puedes ver el código en GitHub:
+      <a href="https://github.com/jonathanha1e/esperanza.github.io" target="_blank">Ver en GitHub</a>
+    </p>
 
-  <h2 id="q1">¿Qué es esta herramienta?</h2>
-  <p id="a1">
-    Es una guía sencilla para ayudarle a entender su estatus migratorio en EE.UU. No es asesoría legal, pero puede ayudarle a saber sus próximos pasos.
-  </p>
+    <h2>¿Mis respuestas se guardan?</h2>
+    <p>No. Esta herramienta no guarda ni transmite ninguna información personal.</p>
 
-  <h2 id="q2">¿Quién hizo esta herramienta?</h2>
-  <p id="a2">
-    Este proyecto es de código abierto. Puedes ver el código y contribuir en GitHub:
-    <a id="ghLink" href="https://github.com/jonathanha1e/esperanza.github.io" target="_blank">Ver en GitHub</a>
-  </p>
+    <h2>¿Cómo puedo encontrar ayuda legal?</h2>
+    <p>
+      Puedes buscar asistencia legal gratuita o de bajo costo a través del EOIR:
+      <a href="https://www.justice.gov/eoir/list-pro-bono-legal-service-providers" target="_blank">
+        Ver lista de proveedores legales
+      </a>
+    </p>
 
-  <h2 id="q3">¿Mis respuestas se guardan?</h2>
-  <p id="a3">
-    No. Esta herramienta no guarda ni transmite ninguna información personal.
-  </p>
-
-  <h2 id="q4">¿Cómo puedo encontrar ayuda legal?</h2>
-  <p id="a4">
-    Puedes buscar asistencia legal gratuita o de bajo costo a través del EOIR:
-    <a href="https://www.justice.gov/eoir/list-pro-bono-legal-service-providers" target="_blank">
-      Ver lista de proveedores legales
-    </a>
-  </p>
-
-  <button id="faqBackBtn" onclick="window.location.href='index.html'">⬅ Volver a la herramienta</button>
-  <button id="faqListenBtn" onclick="speakFAQ()">Escuchar</button>
-
-  <script>
-    function translateFAQ() {
-      const lang = document.getElementById("languageToggle").value;
-
-      if (lang === "en") {
-        document.getElementById("faqTitle").innerText = "Frequently Asked Questions (FAQ)";
-        document.getElementById("q1").innerText = "What is this tool?";
-        document.getElementById("a1").innerText = "This is a simple guide to help you understand your immigration status in the U.S. It is not legal advice, but it can help you understand next steps.";
-        document.getElementById("q2").innerText = "Who made this tool?";
-        document.getElementById("a2").innerHTML = `This project is open source. You can view the code and contribute on GitHub:
-          <a id="ghLink" href="https://github.com/yourusername/your-repo-name" target="_blank">View on GitHub</a>`;
-        document.getElementById("q3").innerText = "Are my answers saved?";
-        document.getElementById("a3").innerText = "No. This tool does not store or transmit any personal information.";
-        document.getElementById("q4").innerText = "How can I find legal help?";
-        document.getElementById("a4").innerHTML = `You can search for free or low-cost legal aid through EOIR:
-          <a href="https://www.justice.gov/eoir/list-pro-bono-legal-service-providers" target="_blank">View legal service providers</a>`;
-        document.getElementById("backBtn").innerText = "⬅ Back to the tool";
-      } else {
-        document.getElementById("faqTitle").innerText = "Preguntas Frecuentes (FAQ)";
-        document.getElementById("q1").innerText = "¿Qué es esta herramienta?";
-        document.getElementById("a1").innerText = "Es una guía sencilla para ayudarle a entender su estatus migratorio en EE.UU. No es asesoría legal, pero puede ayudarle a saber sus próximos pasos.";
-        document.getElementById("q2").innerText = "¿Quién hizo esta herramienta?";
-        document.getElementById("a2").innerHTML = `Este proyecto es de código abierto. Puedes ver el código y contribuir en GitHub:
-          <a id="ghLink" href="https://github.com/yourusername/your-repo-name" target="_blank">Ver en GitHub</a>`;
-        document.getElementById("q3").innerText = "¿Mis respuestas se guardan?";
-        document.getElementById("a3").innerText = "No. Esta herramienta no guarda ni transmite ninguna información personal.";
-        document.getElementById("q4").innerText = "¿Cómo puedo encontrar ayuda legal?";
-        document.getElementById("a4").innerHTML = `Puedes buscar asistencia legal gratuita o de bajo costo a través del EOIR:
-          <a href="https://www.justice.gov/eoir/list-pro-bono-legal-service-providers" target="_blank">Ver lista de proveedores legales</a>`;
-        document.getElementById("backBtn").innerText = "⬅ Volver a la herramienta";
-      }
-    }
-    function speakFAQ() {
-        const lang = document.getElementById("languageToggle").value;
-        const blocks = [
-            document.getElementById("q1").innerText,
-            document.getElementById("a1").innerText,
-            document.getElementById("q2").innerText,
-            document.getElementById("a2").innerText,
-            document.getElementById("q3").innerText,
-            document.getElementById("a3").innerText,
-            document.getElementById("q4").innerText,
-            document.getElementById("a4").innerText
-  ];
-  const text = blocks.join(". ");
-
-  if ('speechSynthesis' in window) {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = lang === "es" ? "es-ES" : "en-US";
-    speechSynthesis.speak(utterance);
-  } else {
-    alert(lang === "es"
-      ? "Tu navegador no soporta texto a voz."
-      : "Your browser doesn't support text-to-speech.");
-  }
-}
-  </script>
-
+    <a class="button-link" href="/">⬅ Volver a la herramienta</a>
+  </div>
 </body>
 </html>
