@@ -10,11 +10,25 @@
     "outcome": "You can look up your court info here using your A#:",
     "outcome_es": "Puede buscar su información de la corte aquí usando su número A:",
     "link": "https://acis.eoir.justice.gov/en/",
-    "next": "hearing_date_input"
+    "next": "verificacion_ubicacion"
   },
+
+  "verificacion_ubicacion": {
+	"question_es": "¿Está su corte en la misma ciudad o área donde vive?",
+	"yes": "hearing_date_input",
+	"no": "mocion_cambio_ubicacion"
+  },
+
   "hearing_date_input": {
-    "special": "hearing_date"
+	"special": "hearing_date"
   },
+
+  "mocion_cambio_ubicacion": {
+    "outcome_es": "Puede presentar una moción para cambiar la ubicación de su corte si vive en otro lugar.",
+    "link": "https://esperanza.github.io/cambiar-ubicacion-corte.html",
+    "link_label_es": "Cómo cambiar la ubicación de su corte"
+
+},
   "n_proceedings": {
     "outcome": "You might not be in proceedings. If you're unsure, check your immigration status with a legal service provider.",
     "outcome_es": "Es posible que no esté en proceso. Si no está seguro, consulte su estatus migratorio con un proveedor de servicios legales."

@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cambiar Audiencia a Video</title>
-  <link rel="stylesheet" href="static/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <main class="container">
+  <div class="container">
     <h1>Cambiar su audiencia a formato por video</h1>
 
     <p>Si desea asistir a su audiencia por video en lugar de en persona, puede presentar una solicitud. Aquí tiene recursos para ayudarle paso a paso.</p>
@@ -31,8 +31,8 @@
     <p><strong>⚠️ Nota:</strong> Se recomienda enviar su solicitud al menos una semana antes de la audiencia.</p>
 
     <div class="nav-buttons">
-      <a href="index.html" id="backBtn" class="button-link">⬅️ Regresar</a>
+      <a href="/" id="backBtn" class="button-link">⬅️ Regresar</a>
     </div>
-  </main>
+  </div>
 </body>
 </html>

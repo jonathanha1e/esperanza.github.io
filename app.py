@@ -11,6 +11,11 @@ def home():
 def next_page():
     return render_template("next.html", title="")
 
+@app.route("/audiencia-video")
+def audiencia_video():
+    return render_template("audiencia-video.html")
+
+
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
@@ -24,9 +29,6 @@ def flow():
 import os
 
 if __name__ == '__main__':
-<<<<<<< HEAD
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8080))
     app.run(host='0.0.0.0', port=port)
-=======
-    app.run(debug=True, port=5000)
->>>>>>> add move to video page, save other stuff
+    app.run(debug=True, port=8080)

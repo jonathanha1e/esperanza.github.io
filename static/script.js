@@ -34,7 +34,6 @@ function renderStep(step) {
   const questionText = document.getElementById("questionText");
   const outcomeText = document.getElementById("outcomeText");
 
-
   if (stepData.special === "hearing_date") {
     questionBox.classList.add("hidden");
     outcomeBox.classList.add("hidden");
@@ -43,7 +42,7 @@ function renderStep(step) {
     return;
   }
 
-  if (stepData.question) {
+  if (stepData.question_es) {
     questionBox.classList.remove("hidden");
     outcomeBox.classList.add("hidden");
     hearingBox.classList.add("hidden");
@@ -58,17 +57,18 @@ function renderStep(step) {
     } else {
       document.getElementById("notSureBtn").classList.add("hidden");
     }
-  } else if (stepData.outcome) {
+  } else if (stepData.outcome_es) {
     questionBox.classList.add("hidden");
     outcomeBox.classList.remove("hidden");
     hearingBox.classList.add("hidden");
-    outcomeText.innerText = stepData.outcome_es;
+    outcomeText.innerText = stepData.outcome_es;}
 
     const linkBtn = document.getElementById("outcomeLink");
     const nextBtn = document.getElementById("nextBtn");
 
     if (stepData.link) {
       linkBtn.href = stepData.link;
+      linkBtn.innerText = stepData.link_label_es || "🔗 Buscar su información"; // ✅ fallback if no label given
       linkBtn.classList.remove("hidden");
     } else {
       linkBtn.classList.add("hidden");
@@ -82,7 +82,6 @@ function renderStep(step) {
       nextBtn.dataset.next = "";
       nextBtn.classList.add("hidden");
     }
-  }
 }
 
 function goTo(step) {
@@ -151,7 +150,12 @@ function calculateDeadline() {
     } else if (hearingDate > 0){
       resultText.innerText = "✅ Su audiencia se acerca, y aún tiene tiempo para pedir presentarse por video.";
       actionBtn.innerText = "Cambiar su audiencia a formato por video";
-      actionBtn.onclick = () => window.open("https://esperanza.github.io/audiencia-video.html", "_blank", "_blank");
+
+      actionBtn.onclick = () => window.location.href = "http://172.20.10.3:8080/audiencia-video.html", "_blank";
+
+      //UNCOMMENT THIS ON LAUNCH actionBtn.onclick = () => window.open("https://esperanza.github.io/audiencia-video.html", "_blank", "_blank");
+
+
     } else {resultText.innerText = "Por favor ingrese una fecha."
         actionBtn.style.display = "none"; // 🔥 HIDE the button
     }
