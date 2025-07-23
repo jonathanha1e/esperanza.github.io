@@ -1,0 +1,27 @@
+<!-- templates/markdown.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    {% with md_path = url_for('serve_markdown', filename=md_file) %}
+    <div id="markdown-container" data-md="{{ md_path }}"></div>
+    {% endwith %}
+    <a class="button-link" href="/">⬅ Volver</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const container = document.getElementById("markdown-container");
+    fetch(container.dataset.md)
+      .then(res => res.text())
+      .then(md => container.innerHTML = marked.parse(md))
+      .catch(() => container.innerHTML = "<p>Error al cargar el contenido.</p>");
+  </script>
+</body>
+</html>

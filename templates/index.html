@@ -3,36 +3,26 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <title>Herramienta de Inmigración</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Herramienta de Inmigración </title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="container">
-    <h1>Herramienta de Inmigración</h1>
-
-    <div id="introBox">
-      <h2>Bienvenido a la herramienta de inmigración</h2>
-      <p>Esta herramienta le ayudará a entender su situación migratoria en EE.UU.</p>
-      <h3>¿Cómo funciona?</h3>
-      <ul>
-        <li>Usted ingresa información básica sobre su caso</li>
-        <li>La herramienta calcula fechas importantes y posibles opciones</li>
-        <li>Recibe recomendaciones generales y recursos</li>
-      </ul>
-      <button id="startBtn">🚀 Empezar</button>
-    </div>
-
+    <div id="introContent" data-md="{{ url_for('serve_markdown', filename='intro.md') }}"></div>
     <a id="faqBtn" href="/faq" class="button-link">❓ Preguntas Frecuentes</a>
 
+    <!-- Hidden flow sections -->
     <div id="questionBox" class="hidden">
       <h2 id="questionText"></h2>
       <button id="yesBtn">✅ Sí</button>
       <button id="noBtn">❌ No</button>
       <button id="notSureBtn">🤔 No estoy seguro</button>
+      <div id="questionMarkdown" class="question-md"></div>
     </div>
 
     <div id="outcomeBox" class="hidden">
+      <h2 id="pageHeading" class="mb-4"></h2>
       <p id="outcomeText"></p>
       <a id="outcomeLink" href="#" target="_blank" class="button-link hidden">🔗 Buscar su información</a>
       <button id="nextBtn" class="hidden">➡️ Siguiente</button>
@@ -44,6 +34,7 @@
       <button id="calculateBtn">🗓️ Calcular</button>
       <div id="warning-container"></div>
       <div id="hearingResult"></div>
+      <div id="hearingMarkdown" class="hearing-md"></div>
     </div>
 
     <div class="nav-buttons hidden" id="navButtons">
@@ -53,6 +44,28 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    const container = document.getElementById("introContent");
+    fetch(container.dataset.md)
+      .then(res => res.text())
+      .then(md => {
+        container.innerHTML = marked.parse(md);
+        const startBtn = document.getElementById("startBtn");
+        if (startBtn) {
+          startBtn.onclick = () => {
+            container.classList.add("hidden");
+            document.getElementById("faqBtn").classList.add("hidden");
+            document.getElementById("questionBox").classList.remove("hidden");
+            document.getElementById("navButtons").classList.remove("hidden");
+            renderStep(currentStep);
+          };
+        }
+      })
+      .catch(() => {
+        container.innerHTML = "<p>Error al cargar la introducción.</p>";
+      });
+  </script>
 </body>
 </html>

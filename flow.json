@@ -1,79 +1,83 @@
 {
   "start": {
-    "question": "Are you currently in removal proceedings?",
-    "question_es": "¿Está usted actualmente en proceso de deportación?",
-    "yes": "y_proceedings",
-    "no": "n_proceedings",
-    "not sure": "ns_proceedings"
-  },
+  "question_es": "¿Está usted actualmente en proceso de deportación?",
+  "yes": "y_proceedings",
+  "no": "outcome_asylum",
+  "not sure": "ns_proceedings",
+  "markdown": "/content/start.md"
+},
+
   "y_proceedings": {
-    "outcome": "You can look up your court info here using your A#:",
-    "outcome_es": "Puede buscar su información de la corte aquí usando su número A:",
-    "link": "https://acis.eoir.justice.gov/en/",
-    "next": "verificacion_ubicacion"
-  },
+  "heading_es": "Vamos a buscar su información de la corte aquí usando su número A.",
+  "markdown": "/content/y_proceedings.md",
+  "link": "https://acis.eoir.justice.gov/en/",
+  "next": "verificacion_ubicacion"
+},
 
   "verificacion_ubicacion": {
-	"question_es": "¿Está su corte en la misma ciudad o área donde vive?",
-	"yes": "hearing_date_input",
-	"no": "mocion_cambio_ubicacion"
-  },
+  "question_es": "¿Está su corte en la misma ciudad o área donde vive?",
+  "yes": "hearing_date_input",
+  "no": "mocion_cambio_ubicacion",
+  "markdown": "/content/verificacion_ubicacion.md"
+},
 
   "hearing_date_input": {
-	"special": "hearing_date"
-  },
+  "special": "hearing_date",
+  "markdown": "/content/hearing_date.md"
+},
 
   "mocion_cambio_ubicacion": {
     "outcome_es": "Puede presentar una moción para cambiar la ubicación de su corte si vive en otro lugar.",
     "link": "https://esperanza.github.io/cambiar-ubicacion-corte.html",
     "link_label_es": "Cómo cambiar la ubicación de su corte"
+  },
 
-},
   "n_proceedings": {
-    "outcome": "You might not be in proceedings. If you're unsure, check your immigration status with a legal service provider.",
-    "outcome_es": "Es posible que no esté en proceso. Si no está seguro, consulte su estatus migratorio con un proveedor de servicios legales."
+    "markdown": "/content/n_proceedings.md"
   },
+
   "ns_proceedings": {
-    "question": "Were you apprehended at the border?",
-    "question_es": "¿Fue detenido en la frontera?",
-    "yes": "border_asylum",
-    "no": "interior_arrest"
-  },
+  "question_es": "¿Fue detenido en la frontera?",
+  "yes": "y_proceedings",
+  "no": "interior_arrest",
+  "markdown": "/content/border_asylum.md"
+},
+
   "border_asylum": {
-    "question": "Did you claim asylum?",
     "question_es": "¿Pidió asilo?",
     "yes": "outcome_asylum",
-    "no": "outcome_expedited"
+    "no": "interior_arrest"
   },
+
   "interior_arrest": {
-    "question": "Were you arrested by ICE inside the U.S.?",
     "question_es": "¿Fue arrestado por ICE dentro de los EE.UU.?",
-    "yes": "outcome_nta",
-    "no": "outcome_watchlist"
+    "yes": "y_proceedings",
+    "no": "n_proceedings",
+    "markdown": "/content/interior_arrest.md"
   },
+
   "outcome_asylum": {
-    "outcome": "➡ You may be eligible for asylum in court.",
-    "outcome_es": "➡ Puede que sea elegible para asilo en la corte."
+    "question_es": "¿Ha aplicado para el asilo en los EE.UU?",
+    "yes": "y_proceedings",
+    "no": "ns_proceedings",
+    "markdown": "/content/outcome_asylum.md"
   },
 
   "outcome_expedited": {
-    "outcome": "➡ You may face expedited removal.",
-    "outcome_es": "➡ Puede enfrentar una deportación expedita.",
-      "action": {
-        "label_en": "Apply for Asylum",
-        "label_es": "Solicitar asilo",
-        "link": "https://www.uscis.gov/humanitarian/refugees-and-asylum/asylum"
-  }
-},
+    "markdown": "/content/outcome_expedited.md",
+    "action": {
+      "label_es": "Solicitar asilo",
+      "link": "https://www.uscis.gov/humanitarian/refugees-and-asylum/asylum"
+    }
+  },
 
   "outcome_nta": {
-    "outcome": "➡ You’ll likely receive a Notice to Appear (NTA).",
-    "outcome_es": "➡ Probablemente recibirá una Notificación de Comparecencia (NTA).",
+    "markdown": "/content/outcome_nta.md",
     "link": "https://acis.eoir.justice.gov/en/",
     "next": "hearing_date_input"
   },
+
   "outcome_watchlist": {
-    "outcome": "➡ You may not be in proceedings yet. Stay alert.",
-    "outcome_es": "➡ Puede que aún no esté en proceso. Manténgase atento."
+    "markdown": "/content/outcome_watchlist.md"
   }
 }
